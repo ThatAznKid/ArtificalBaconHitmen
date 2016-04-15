@@ -43,6 +43,12 @@ public class PictureTester
 	canvas.explore();
     }
   
+    public static void testMyCollage() { 
+	Picture canvas = new Picture("640x480.jpg");
+	canvas.myCollage();
+	canvas.explore();
+    }
+
     /** Method to test edgeDetection */
     public static void testEdgeDetection()
     {
@@ -125,7 +131,8 @@ public class PictureTester
 	//testMirrorArms();
 	//testMirrorGull();
 	//testMirrorDiagonal();
-        testCollage();
+        //testCollage();
+	testMyCollage();
 	//testCopy();
 	//testEdgeDetection();
 	//testEdgeDetection2();
@@ -135,6 +142,6 @@ public class PictureTester
 	//testSetRedToHalfValueInTopHalf();
 	//testClearBlueOverValue(200);
 	//testGetAverageForColumn(0);
-	testFixUnderwater();
+	//testFixUnderwater();
     }
 }
