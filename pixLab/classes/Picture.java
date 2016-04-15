@@ -216,17 +216,56 @@ public class Picture extends SimplePicture
       }
     }
   }
+
+    public void keepOnlyBlue() {
+	Pixel[][] pixels = this.getPixels2D();
+	for (Pixel[] r : pixels)
+	    for (Pixel c : r) {
+		c.setRed(0);
+		c.setGreen(0);
+	    }
+    }
+
+    public void negate() {
+	Pixel[][] pixels = this.getPixels2D();
+	for (Pixel[] r : pixels)
+	    for (Pixel c : r) {
+		c.setRed(255-c.getRed());
+		c.setGreen(255-c.getGreen());
+		c.setBlue(255-c.getBlue());
+	    }
+    }
+
+    public void greyscale() {
+	Pixel[][] pixels = this.getPixels2D();
+	for (Pixel[] r : pixels)
+	    for (Pixel c : r) {
+		int avg = (c.getRed()+c.getGreen()+c.getBlue())/3;
+		c.setRed(avg);
+		c.setGreen(avg);
+		c.setBlue(avg);
+	    }
+    }
+
+    public void fixUnderwater() {
+	Pixel[][] pixels = this.getPixels2D();
+	for (Pixel[] r : pixels)
+	    for (Pixel c : r) {
+		if (c.getGreen() < c.getBlue())
+		    c.setRed(c.getRed()+150);
+	    }
+    }
   
   
-  /* Main method for testing - each class in Java can have a main 
-   * method 
-   */
-  public static void main(String[] args) 
-  {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
-  }
+    /* Main method for testing - each class in Java can have a main 
+     * method 
+     */
+    public static void main(String[] args) 
+    {
+	Picture beach = new Picture("beach.jpg");
+	beach.explore();
+	beach.zeroBlue();
+	beach.explore();
+    }
   
 } // this } is the end of class Picture, put all new methods before this
