@@ -104,7 +104,19 @@ public class PictureTester
 	beach.mirrorDiagonal();
 	beach.explore();
     }
-  
+    
+    public static void testMirrorArms() {
+	Picture snowman = new Picture("snowman.jpg");
+	snowman.mirrorArms();
+	snowman.explore();
+    }
+
+    public static void testMirrorGull() {
+	Picture gull = new Picture("seagull.jpg");
+	gull.mirrorGull();
+	gull.explore();
+    }
+
     /** Main method for testing.  Every class can have a main
      * method in Java */
     public static void main(String[] args)
@@ -112,29 +124,30 @@ public class PictureTester
 	// uncomment a call here to run a test
 	// and comment out the ones you don't want
 	// to run
-	//testZeroBlue();
-	//testKeepOnlyBlue();
-	//testNegate();
-	//testGreyscale();
+	testZeroBlue();
+	testKeepOnlyBlue();
+	testNegate();
+	testGreyscale();
 	//testKeepOnlyBlue();
 	//testKeepOnlyRed();
 	//testKeepOnlyGreen();
 	//testNegate();
 	//testGrayscale();
 	//testFixUnderwater();
-	//testMirrorVertical();
-	//testMirrorVerticalRightToLeft();
-	//testMirrorHorizontal();
-	//testMirrorHorizontalBotToTop();
-	//testMirrorDiagonal();
-	//testMirrorTemple();
+	testMirrorVertical();
+	testMirrorVerticalRightToLeft();
+	testMirrorHorizontal();
+	testMirrorHorizontalBotToTop();
+	testMirrorDiagonal();
+	testMirrorTemple();
+	testMirrorArms();
+	testMirrorGull();
 	//testMirrorArms();
 	//testMirrorGull();
 	//testMirrorDiagonal();
-        //testCollage();
-	testMyCollage();
+        testCollage();
 	//testCopy();
-	//testEdgeDetection();
+	testEdgeDetection();
 	//testEdgeDetection2();
 	//testChromakey();
 	//testEncodeAndDecode();
@@ -142,6 +155,6 @@ public class PictureTester
 	//testSetRedToHalfValueInTopHalf();
 	//testClearBlueOverValue(200);
 	//testGetAverageForColumn(0);
-	//testFixUnderwater();
+	testFixUnderwater();
     }
 }
