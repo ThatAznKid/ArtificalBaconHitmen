@@ -285,6 +285,28 @@ public class Picture extends SimplePicture
     }
   }
 
+    public void edgeDetection2 (int edgeDist) { 
+	Pixel leftPixel = null;
+	Pixel botLeftPixel = null;
+	Pixel[][] pixels = this.getPixels2D();
+	Color botLeftColor = null;
+	for (int r = 0; r < pixels.length-1; r++) {
+	    for (int c = 0; c < pixels[0].length; c++) {
+		leftPixel = pixels[r][c];
+		botLeftPixel = pixels [r+1][c];
+		botLeftColor = botLeftPixel.getColor();
+		if (leftPixel.colorDistance(botLeftColor) > 
+		    edgeDist) { 
+		    leftPixel.setColor(Color.BLACK); 
+		} 
+		else { 
+		    leftPixel.setColor(Color.WHITE);
+		}
+	    }
+	}
+    }
+}
+
     public void keepOnlyBlue() {
 	Pixel[][] pixels = this.getPixels2D();
 	for (Pixel[] r : pixels)
